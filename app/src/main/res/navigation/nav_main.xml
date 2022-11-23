@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainpage">
+    <fragment
+        android:id="@+id/mainpage"
+        android:name="com.example.mini_game_project.Mainpage"
+        android:label="fragment_mainpage"
+        tools:layout="@layout/fragment_mainpage" >
+        <action
+            android:id="@+id/action_mainpage_to_nickname_and_character"
+            app:destination="@id/nickname_and_character" />
+        <action
+            android:id="@+id/action_mainpage_to_rank2"
+            app:destination="@id/rank" />
+        <action
+            android:id="@+id/action_mainpage_to_invite22"
+            app:destination="@id/invite" />
+        <action
+            android:id="@+id/action_mainpage_to_play2"
+            app:destination="@id/play" />
+        <action
+            android:id="@+id/action_mainpage_to_guide"
+            app:destination="@id/guide" />
+    </fragment>
+    <fragment
+        android:id="@+id/nickname_and_character"
+        android:name="com.example.mini_game_project.NicknameAndCharacter"
+        android:label="fragment_nickname_and_character"
+        tools:layout="@layout/fragment_nickname_and_character" >
+        <action
+            android:id="@+id/action_nickname_and_character_to_mainpage"
+            app:destination="@id/mainpage" />
+    </fragment>
+    <fragment
+        android:id="@+id/rank"
+        android:name="com.example.mini_game_project.Rank"
+        android:label="fragment_rank"
+        tools:layout="@layout/fragment_rank" >
+        <action
+            android:id="@+id/action_rank_to_mainpage"
+            app:destination="@id/mainpage" />
+    </fragment>
+    <fragment
+        android:id="@+id/invite"
+        android:name="com.example.mini_game_project.Invite"
+        android:label="fragment_invite"
+        tools:layout="@layout/fragment_invite" >
+        <action
+            android:id="@+id/action_invite_to_mainpage"
+            app:destination="@id/mainpage" />
+    </fragment>
+    <fragment
+        android:id="@+id/play"
+        android:name="com.example.mini_game_project.Play"
+        android:label="fragment_play"
+        tools:layout="@layout/fragment_play" >
+        <action
+            android:id="@+id/action_play_to_mainpage"
+            app:destination="@id/mainpage" />
+        <action
+            android:id="@+id/action_play_to_findpicture_game"
+            app:destination="@id/findpicture_game" />
+        <action
+            android:id="@+id/action_play_to_carGame"
+            app:destination="@id/carGame" />
+        <action
+            android:id="@+id/action_play_to_numberGame"
+            app:destination="@id/numberGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/guide"
+        android:name="com.example.mini_game_project.Guide"
+        android:label="fragment_guide"
+        tools:layout="@layout/fragment_guide" >
+        <action
+            android:id="@+id/action_guide_to_mainpage"
+            app:destination="@id/mainpage" />
+    </fragment>
+    <fragment
+        android:id="@+id/findpicture_game"
+        android:name="com.example.mini_game_project.FindpictureGame"
+        android:label="fragment_findpicture_game"
+        tools:layout="@layout/fragment_findpicture_game" />
+    <fragment
+        android:id="@+id/carGame"
+        android:name="com.example.mini_game_project.CarGame"
+        android:label="fragment_car_game"
+        tools:layout="@layout/fragment_car_game" >
+        <action
+            android:id="@+id/action_carGame_to_carGameView"
+            app:destination="@id/carGameView" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberGame"
+        android:name="com.example.mini_game_project.NumberGame"
+        android:label="fragment_number_game"
+        tools:layout="@layout/fragment_number_game" />
+    <fragment
+        android:id="@+id/carGameView"
+        android:name="com.example.mini_game_project.CarGameView"
+        android:label="fragment_car_game_view"
+        tools:layout="@layout/fragment_car_game_view" >
+        <action
+            android:id="@+id/action_carGameView_to_carGameOver"
+            app:destination="@id/carGameOver" />
+    </fragment>
+    <fragment
+        android:id="@+id/carGameOver"
+        android:name="com.example.mini_game_project.CarGameOver"
+        android:label="fragment_car_game_over"
+        tools:layout="@layout/fragment_car_game_over" />
+</navigation>

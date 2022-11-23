@@ -1,31 +1,42 @@
 package com.example.mini_game_project
 
-import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.example.mini_game_project.databinding.FragmentPlayBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.guide.*
-import kotlinx.android.synthetic.main.play.*
 
-
-class Play : AppCompatActivity() {
-
+class Play : Fragment() {
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.play)
+    var binding : FragmentPlayBinding? = null
 
-        return_to.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentPlayBinding.inflate(inflater)
+        return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding?.returnTo?.setOnClickListener {
+            findNavController().navigate(R.id.action_play_to_mainpage)
         }
 
-        viewPager = findViewById(R.id.viewPager)
-        tabLayout = findViewById(R.id.tabLayout)
+        viewPager = binding?.viewPager!!
+        tabLayout = binding?.tabLayout!!
+
         viewPager.adapter = ViewPagerAdapter(this)
 
         TabLayoutMediator(tabLayout,viewPager){tab,index ->
@@ -33,7 +44,6 @@ class Play : AppCompatActivity() {
                 0 -> {"부릉!부릉!"}
                 1 -> {"2048"}
                 2 -> {"Black Jack"}
-                3 -> {"가위! 바위! 보!"}
                 else -> {throw Resources.NotFoundException("Position Not Found")
                 }
             }
