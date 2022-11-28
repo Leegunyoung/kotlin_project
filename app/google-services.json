@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "798130874649",
-    "project_id": "minigame-factory",
-    "storage_bucket": "minigame-factory.appspot.com"
+    "project_number": "378115838199",
+    "project_id": "minigame-e3b30",
+    "storage_bucket": "minigame-e3b30.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:798130874649:android:6f626446b6dedfb33a7d88",
-        "android_client_info": {
-          "package_name": "com.company.minigame_factory"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "798130874649-njqalgo5r5cvbhlk0095001cb3vdagsu.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBpm6PhgMQA8lbrmEsZUrEjcZU8EwicybA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "798130874649-njqalgo5r5cvbhlk0095001cb3vdagsu.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:798130874649:android:03d18601ec702a163a7d88",
+        "mobilesdk_app_id": "1:378115838199:android:22a4d619481a70392583f2",
         "android_client_info": {
           "package_name": "com.example.mini_game_project"
         }
       },
       "oauth_client": [
         {
-          "client_id": "798130874649-njqalgo5r5cvbhlk0095001cb3vdagsu.apps.googleusercontent.com",
+          "client_id": "378115838199-eai4m62qpeqg35imk26mkm65b14n4q0a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBpm6PhgMQA8lbrmEsZUrEjcZU8EwicybA"
+          "current_key": "AIzaSyDrQKlN_HZNqt9R0Yn6118yVBMho1emt14"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "798130874649-njqalgo5r5cvbhlk0095001cb3vdagsu.apps.googleusercontent.com",
+              "client_id": "378115838199-eai4m62qpeqg35imk26mkm65b14n4q0a.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

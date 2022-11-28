@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Invite">
+    tools:context=".main_page.Invite">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/rank_back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,20 +40,19 @@
         android:text="Factory"
         android:textColor="#02126A"
         android:textSize="60sp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mini_game"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt_look_for"
         android:layout_width="268dp"
         android:layout_height="51dp"
         android:fontFamily="@font/dots_game"
         android:gravity="center"
         android:text="초대할 친구 검색"
-        android:textSize="31dp"
+        android:textSize="31sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,68 +62,67 @@
         app:layout_constraintVertical_bias="0.236" />
 
     <EditText
-        android:id="@+id/textView3"
+        android:id="@+id/txt_friend_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="닉네임을 입력하시오."
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:inputType="text"
         android:gravity="center"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.324"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_look_for" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_look_for"
         android:layout_width="80dp"
         android:layout_height="48dp"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_friend_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        app:layout_constraintStart_toEndOf="@+id/txt_friend_name"
+        app:layout_constraintTop_toTopOf="@+id/txt_friend_name" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txt_1"
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:layout_marginTop="90dp"
         android:fontFamily="@font/dots_game"
         android:lineSpacingExtra="5dp"
         android:text="1. 게임 친구가 아닌 친구초대 앱 이벤트의 친구 초대로 인게임 친구와 무관합니다."
-        android:textSize="23dp"
+        android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_friend_name" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txt_2"
         android:layout_width="match_parent"
         android:layout_height="82dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/dots_game"
         android:lineSpacingExtra="5dp"
         android:text="2. 친구 초대 방법은 [친구초대]버튼을 클릭 후, 초대할 유저의 [닉네임]을 검색후 초대하실 수 있습니다."
-        android:textSize="23dp"
+        android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_1" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txt_3"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/dots_game"
         android:lineSpacingExtra="5dp"
         android:text="3. 초대한 유저가 [친구수락]을 받아야만 친구 목록에 등록됩니다."
-        android:textSize="23dp"
+        android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

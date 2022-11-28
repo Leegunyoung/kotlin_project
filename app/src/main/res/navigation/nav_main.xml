@@ -6,12 +6,12 @@
     app:startDestination="@id/mainpage">
     <fragment
         android:id="@+id/mainpage"
-        android:name="com.example.mini_game_project.Mainpage"
+        android:name="com.example.mini_game_project.main_page.MainPage"
         android:label="fragment_mainpage"
-        tools:layout="@layout/fragment_mainpage" >
+        tools:layout="@layout/fragment_main_page" >
         <action
             android:id="@+id/action_mainpage_to_nickname_and_character"
-            app:destination="@id/nickname_and_character" />
+            app:destination="@id/nickname" />
         <action
             android:id="@+id/action_mainpage_to_rank2"
             app:destination="@id/rank" />
@@ -26,17 +26,17 @@
             app:destination="@id/guide" />
     </fragment>
     <fragment
-        android:id="@+id/nickname_and_character"
-        android:name="com.example.mini_game_project.NicknameAndCharacter"
-        android:label="fragment_nickname_and_character"
-        tools:layout="@layout/fragment_nickname_and_character" >
+        android:id="@+id/nickname"
+        android:name="com.example.mini_game_project.main_page.Nickname"
+        android:label="fragment_nickname"
+        tools:layout="@layout/fragment_nickname">
         <action
             android:id="@+id/action_nickname_and_character_to_mainpage"
             app:destination="@id/mainpage" />
     </fragment>
     <fragment
         android:id="@+id/rank"
-        android:name="com.example.mini_game_project.Rank"
+        android:name="com.example.mini_game_project.main_page.Rank"
         android:label="fragment_rank"
         tools:layout="@layout/fragment_rank" >
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/invite"
-        android:name="com.example.mini_game_project.Invite"
+        android:name="com.example.mini_game_project.main_page.Invite"
         android:label="fragment_invite"
         tools:layout="@layout/fragment_invite" >
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/play"
-        android:name="com.example.mini_game_project.Play"
+        android:name="com.example.mini_game_project.main_page.Play"
         android:label="fragment_play"
         tools:layout="@layout/fragment_play" >
         <action
@@ -72,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/guide"
-        android:name="com.example.mini_game_project.Guide"
+        android:name="com.example.mini_game_project.main_page.Guide"
         android:label="fragment_guide"
         tools:layout="@layout/fragment_guide" >
         <action
@@ -81,12 +81,16 @@
     </fragment>
     <fragment
         android:id="@+id/findpicture_game"
-        android:name="com.example.mini_game_project.FindpictureGame"
+        android:name="com.example.mini_game_project.picture_game.FindPictureGame"
         android:label="fragment_findpicture_game"
-        tools:layout="@layout/fragment_findpicture_game" />
+        tools:layout="@layout/fragment_find_picture_game" >
+        <action
+            android:id="@+id/action_findpicture_game_to_samepictureRank"
+            app:destination="@id/samepictureRank" />
+    </fragment>
     <fragment
         android:id="@+id/carGame"
-        android:name="com.example.mini_game_project.CarGame"
+        android:name="com.example.mini_game_project.car_game.CarGame"
         android:label="fragment_car_game"
         tools:layout="@layout/fragment_car_game" >
         <action
@@ -97,10 +101,14 @@
         android:id="@+id/numberGame"
         android:name="com.example.mini_game_project.NumberGame"
         android:label="fragment_number_game"
-        tools:layout="@layout/fragment_number_game" />
+        tools:layout="@layout/fragment_number_game" >
+        <action
+            android:id="@+id/action_numberGame_to_numberRank"
+            app:destination="@id/numberRank" />
+    </fragment>
     <fragment
         android:id="@+id/carGameView"
-        android:name="com.example.mini_game_project.CarGameView"
+        android:name="com.example.mini_game_project.car_game.CarGameView"
         android:label="fragment_car_game_view"
         tools:layout="@layout/fragment_car_game_view" >
         <action
@@ -109,7 +117,26 @@
     </fragment>
     <fragment
         android:id="@+id/carGameOver"
-        android:name="com.example.mini_game_project.CarGameOver"
+        android:name="com.example.mini_game_project.car_game.CarGameOver"
         android:label="fragment_car_game_over"
-        tools:layout="@layout/fragment_car_game_over" />
+        tools:layout="@layout/fragment_car_game_over" >
+        <action
+            android:id="@+id/action_carGameOver_to_carGameRank"
+            app:destination="@id/carGameRank" />
+    </fragment>
+    <fragment
+        android:id="@+id/samepictureRank"
+        android:name="com.example.mini_game_project.rank_page_list.FindPictureRank"
+        android:label="fragment_samepicture_rank"
+        tools:layout="@layout/fragment_find_picture_rank" />
+    <fragment
+        android:id="@+id/numberRank"
+        android:name="com.example.mini_game_project.rank_page_list.NumberRank"
+        android:label="fragment_number_rank"
+        tools:layout="@layout/fragment_number_rank" />
+    <fragment
+        android:id="@+id/carGameRank"
+        android:name="com.example.mini_game_project.rank_page_list.CarGameRank"
+        android:label="fragment_car_game_rank"
+        tools:layout="@layout/fragment_car_game_rank" />
 </navigation>
