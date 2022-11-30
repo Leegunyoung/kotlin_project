@@ -18,5 +18,4 @@ class NumberRank : Fragment() {
         binding = FragmentNumberRankBinding.inflate(inflater)
         return binding?.root
     }
-
 }

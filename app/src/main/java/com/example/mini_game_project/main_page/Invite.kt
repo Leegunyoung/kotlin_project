@@ -18,4 +18,9 @@ class Invite : Fragment() {
         binding = FragmentInviteBinding.inflate(inflater,container,false)
         return binding?.root
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 }

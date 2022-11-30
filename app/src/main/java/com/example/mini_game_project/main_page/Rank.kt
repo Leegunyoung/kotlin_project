@@ -51,4 +51,9 @@ class Rank : Fragment() {
         }.attach()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
+
 }

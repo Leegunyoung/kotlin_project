@@ -71,18 +71,51 @@ class FindPictureGame : Fragment(), StuffAdapterCallback {
         }
     }
 
+    // 인터페이스의 콜백 함수 구현, 이를 통해 어뎁터로 보내는 징검다리 역할을 해줌
     override fun onGameOverCallback() {
+        // 게임을 완료하는데 걸린 시간을 계산하기 위함
         timeFlow = SystemClock.elapsedRealtime() - binding?.timer?.base!!.toLong()
+
+        // 사용자에게 몇분 몇초가 걸렸는지 보여줌
         Toast.makeText(requireActivity(),
             "${timeFlow/6000}분 ${(timeFlow/1000%60)}초",
             Toast.LENGTH_LONG).show()
+
+        //바로 랭킹 페이지로 이동하게 함
         findNavController().navigate(R.id.action_findpicture_game_to_samepictureRank)
     }
 
+    fun gameScore(){
+        // 모두 다 뒤집혔는지 확인
+        var tf = true
+
+        // 객체 모두를 순회해 giftbtn이 모두 없어졌다면 tf는 true
+        for (i in 0 until things.size){
+            if(things[i].clickFlag){
+                tf = false
+            }
+        }
+        // tf 가 true면 데이터 베이스와 리스트에 넣어줌
+        if (tf){
+            timeFlow = SystemClock.elapsedRealtime() - binding?.timer?.base!!.toLong()
+
+        }
+    }
 
     override fun onDestroyView(){  //파괴자
         super.onDestroyView()
         binding = null
     }
 }
+
+/*
+이제 해야할 것
+하나의 코드에 합치기,
+연미: 숫자게임
+건영: 자동차 게임
+승현: 그림 맞추기 게임
+게임의 결과를 파이어 베이스에 보내되 유저 이름의 child로 들어가게 해야할 것,
+각각의 유저의 이름에는 각각의 게임 기록이 남아있어야함
+또한 recycleview를 통해 이를 랭킹으로 구현해야함, 게임마다 랭킹페이지 만들어야 함.
+ */
 

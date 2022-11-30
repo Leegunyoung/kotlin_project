@@ -31,6 +31,7 @@ class MainPage : Fragment() {
             findNavController().navigate(R.id.action_mainpage_to_play2)
         }
         binding?.nicknameBtn?.setOnClickListener {
+
             findNavController().navigate(R.id.action_mainpage_to_nickname_and_character)
         }
         binding?.inviteBtn?.setOnClickListener {
@@ -43,5 +44,6 @@ class MainPage : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding = null
     }
 }

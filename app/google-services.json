@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "378115838199",
-    "project_id": "minigame-e3b30",
-    "storage_bucket": "minigame-e3b30.appspot.com"
+    "project_number": "506521021105",
+    "firebase_url": "https://game-ce0c4-default-rtdb.firebaseio.com",
+    "project_id": "game-ce0c4",
+    "storage_bucket": "game-ce0c4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:378115838199:android:22a4d619481a70392583f2",
+        "mobilesdk_app_id": "1:506521021105:android:04c232aefc56bd56ff1090",
         "android_client_info": {
           "package_name": "com.example.mini_game_project"
         }
       },
       "oauth_client": [
         {
-          "client_id": "378115838199-eai4m62qpeqg35imk26mkm65b14n4q0a.apps.googleusercontent.com",
+          "client_id": "506521021105-8sk00lu4lf40jtlh4er6gc37fpbv2ub8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDrQKlN_HZNqt9R0Yn6118yVBMho1emt14"
+          "current_key": "AIzaSyAe8o8OaJD6nH37l3nwLuQtTexUPs3-ySQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "378115838199-eai4m62qpeqg35imk26mkm65b14n4q0a.apps.googleusercontent.com",
+              "client_id": "506521021105-8sk00lu4lf40jtlh4er6gc37fpbv2ub8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

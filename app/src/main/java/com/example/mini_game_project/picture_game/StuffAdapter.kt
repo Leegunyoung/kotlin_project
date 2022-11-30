@@ -73,6 +73,8 @@ class StuffAdapter(val stuffList: MutableList<Stuff>, private val callback: Stuf
                 }
                 notifyDataSetChanged()  //이를 알려줌
 
+
+                // 8쌍을 모두 찾으면 콜백함수 부름
                 if(num == 8){
                     callback.onGameOverCallback()
                 }
