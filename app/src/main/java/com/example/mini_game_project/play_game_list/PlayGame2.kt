@@ -24,7 +24,8 @@ class PlayGame2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.numberGameBtn?.setOnClickListener {
+        // 버튼 이벤트 구현
+        binding?.btnStart?.setOnClickListener {
             findNavController().navigate(R.id.action_play_to_numberGame)
         }
     }

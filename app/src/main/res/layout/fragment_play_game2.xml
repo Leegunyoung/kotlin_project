@@ -3,25 +3,44 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".play_game_list.PlayGame2"
-    android:background="@drawable/number_background">
+    android:background="#5E35B1"
+    tools:context=".play_game_list.PlayGame2">
 
+    <TextView
+        android:id="@+id/txt_number_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dots_game"
+        android:text="계산기 게임"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#FEFEFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
-        android:id="@+id/number_game_btn"
-        android:layout_width="141dp"
-        android:layout_height="73dp"
-        android:background="#FF5722"
-        android:fontFamily="@font/dots_game"
-        android:text="Play!"
-        android:textColor="#EFDB17"
-        android:textSize="40sp"
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#FDF9F9"
+        android:text="Game Start"
+        android:textColor="#5E35B1"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_number_game" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

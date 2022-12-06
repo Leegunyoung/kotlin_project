@@ -47,6 +47,7 @@ class Nickname : Fragment() {
             postName(false)
         }
 
+        // 메인페이지로 돌아감
         binding?.beforeBtn?.setOnClickListener {
             findNavController().navigate(R.id.action_nickname_and_character_to_mainpage)
         }

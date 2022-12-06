@@ -1,30 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".play_game_list.PlayGame1"
-    android:background="@drawable/car_background">
+    android:background="@drawable/road"
+    tools:context=".play_game_list.PlayGame1">
 
-
-    <Button
-        android:id="@+id/car_game_btn"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/play_game_btn"
-        android:fontFamily="@font/dots_game"
-        android:text="Play!"
-        android:textColor="#EFDB17"
-        android:textSize="23sp"
+        android:layout_margin="15dp"
+        android:lineSpacingExtra="20sp"
+        android:text="Racing game"
+        android:textAlignment="center"
+        android:textColor="#03A9F4"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="Start"
+        app:backgroundTint="#830F36"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 
+    <Button
+        android:id="@+id/btn_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알람"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start" />
 </androidx.constraintlayout.widget.ConstraintLayout>

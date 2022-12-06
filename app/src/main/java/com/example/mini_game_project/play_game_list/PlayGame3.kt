@@ -24,6 +24,7 @@ class PlayGame3 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 버튼 이벤트 구현
         binding?.pictureGameBtn?.setOnClickListener {
             findNavController().navigate(R.id.action_play_to_findpicture_game)
         }

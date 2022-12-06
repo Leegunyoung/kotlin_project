@@ -1,7 +1,5 @@
 package com.example.mini_game_project.main_page
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +19,7 @@ class Guide : DialogFragment() {
         _binding = FragmentGuideBinding.inflate(inflater, container, false)
 
         binding?.closeBtn?.setOnClickListener {
-            dismiss()       //클릭시 닫힘
+            dismiss()      //클릭시 닫힘
         }
         return binding?.root
     }

@@ -42,9 +42,9 @@ class Rank : Fragment() {
 
         TabLayoutMediator(tabLayout,viewPager){tab,index ->
             tab.text = when(index){
-                0 -> {"Car Game"}
-                1 -> {"Same Picture"}
-                2 -> {"Number Game"}
+                0 -> "Car Game"
+                1 -> "Same Picture"
+                2 -> "Number Game"
                 else -> {throw Resources.NotFoundException("Position Not Found")
                 }
             }

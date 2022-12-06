@@ -8,7 +8,7 @@
     tools:context=".main_page.Rank">
 
     <ImageView
-        android:id="@+id/rank_back"
+        android:id="@+id/friend_find"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

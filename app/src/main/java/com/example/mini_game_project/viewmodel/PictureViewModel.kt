@@ -30,19 +30,4 @@ class PictureViewModel : ViewModel() {
         repository.observeRank(_rank, _nowRank, _last)
     }
 
-
-//    private fun checkRank(time: Int?, name: String) {
-//        val newScore = DEFAULT_RANK
-//        newScore.time = time ?: 0
-//        newScore.name = name
-//        repository.checkScore
-//    }
-//
-//    fun tryRank(newScore: Int?, name: String){
-//        checkRank(newScore, name)
-//    }
-//
-//    fun reSetNowRank(){
-//        _nowRank.postValue("")
-//    }
 }

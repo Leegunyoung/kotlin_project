@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -28,7 +30,7 @@ class FindPictureGame : Fragment(), StuffAdapterCallback {
         binding = FragmentFindPictureGameBinding.inflate(inflater,container,false)  //fragment에서 기본적인 초기화 진행
 
         //카드를 언제 넣어줄 것인가?
-        things = arrayListOf<Stuff>(        //arraylist에 stuff 객체를 생성해 넣어주자
+        things = arrayListOf<Stuff>( //arraylist에 stuff 객체를 생성해 넣어주자
             Stuff(Kindof.CHRISTMASTREE, true),
             Stuff(Kindof.REINDEER, true),
             Stuff(Kindof.SANTA, true),
@@ -47,9 +49,9 @@ class FindPictureGame : Fragment(), StuffAdapterCallback {
             Stuff(Kindof.WREATH, true)
         )
         things.shuffle()    // 게임 시작 전 바로 셔플 진행
-
-        init()  //함수를 통해 셔플 진행
         binding?.timer?.start() // 타이머 시작
+
+        reset()  //함수를 통해 다시 셔플 진행
 
         binding?.recStuff?.layoutManager = GridLayoutManager(activity,4) //gridlayout을 통해 4x4로 나눠서 보여줌
         binding?.recStuff?.adapter = StuffAdapter(things, this) // 생성해준 stuff 객체 adapter 적용
@@ -57,8 +59,7 @@ class FindPictureGame : Fragment(), StuffAdapterCallback {
         return binding?.root
     }
 
-    private fun init(){ //셔플될때 마다 flag를 true로 바꿔 준 다음 다시 셔플 시작
-
+    private fun reset(){ //셔플될때 마다 flag를 true로 바꿔 준 다음 다시 셔플 시작
         binding?.resetBtn?.setOnClickListener { // 리셋버튼 터치 구현
             for (i in things){  //모두 true로 바꿔 준 후
                 i.clickFlag = true
@@ -76,30 +77,15 @@ class FindPictureGame : Fragment(), StuffAdapterCallback {
         // 게임을 완료하는데 걸린 시간을 계산하기 위함
         timeFlow = SystemClock.elapsedRealtime() - binding?.timer?.base!!.toLong()
 
-        // 사용자에게 몇분 몇초가 걸렸는지 보여줌
-        Toast.makeText(requireActivity(),
-            "${timeFlow/6000}분 ${(timeFlow/1000%60)}초",
-            Toast.LENGTH_LONG).show()
+        // millisecond이므로 계산을 따로 해서 결과값을 보내줘야함
+        val result = "${timeFlow/60000}분 ${(timeFlow/1000%60)}초"
 
-        //바로 랭킹 페이지로 이동하게 함
-        findNavController().navigate(R.id.action_findpicture_game_to_samepictureRank)
-    }
-
-    fun gameScore(){
-        // 모두 다 뒤집혔는지 확인
-        var tf = true
-
-        // 객체 모두를 순회해 giftbtn이 모두 없어졌다면 tf는 true
-        for (i in 0 until things.size){
-            if(things[i].clickFlag){
-                tf = false
-            }
+        // 게임 기록을 번들을 통해서 결과를 보여주는 프레그먼트로 보내줘야한다
+        val bundle = Bundle().apply{
+            putString("Time",result)
         }
-        // tf 가 true면 데이터 베이스와 리스트에 넣어줌
-        if (tf){
-            timeFlow = SystemClock.elapsedRealtime() - binding?.timer?.base!!.toLong()
-
-        }
+        //바로 결과 페이지로 번들과 함께 이동하게 함
+        findNavController().navigate(R.id.action_findpicture_game_to_samepictureRank,bundle)
     }
 
     override fun onDestroyView(){  //파괴자
@@ -107,15 +93,4 @@ class FindPictureGame : Fragment(), StuffAdapterCallback {
         binding = null
     }
 }
-
-/*
-이제 해야할 것
-하나의 코드에 합치기,
-연미: 숫자게임
-건영: 자동차 게임
-승현: 그림 맞추기 게임
-게임의 결과를 파이어 베이스에 보내되 유저 이름의 child로 들어가게 해야할 것,
-각각의 유저의 이름에는 각각의 게임 기록이 남아있어야함
-또한 recycleview를 통해 이를 랭킹으로 구현해야함, 게임마다 랭킹페이지 만들어야 함.
- */
 

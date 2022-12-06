@@ -32,20 +32,24 @@ class Play : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.returnPlayToMain?.setOnClickListener {
+        // 메인으로 돌아가는 버튼
+        binding?.btnPlayToMain?.setOnClickListener {
             findNavController().navigate(R.id.action_play_to_mainpage)
         }
 
+        // viewPager에는 바인딩된 viewPager layout을 tabLayout에는 바인딩된 tabLayout을 넣어준다.
         viewPager = binding?.viewPager1!!
         tabLayout = binding?.tabLayout1!!
 
+        // viewpager의 어뎁터로 이전에 만들어놓은 PlayPagerAdaper를 연결해준다.
         viewPager.adapter = PlayPagerAdapter(this)
 
+        // TabLayoutMediator를 사용하여서 각 tab의 text와 index을 매칭 시킨 후 attach 하면 같이 슬라이드 되는 레이아웃 만들어짐
         TabLayoutMediator(tabLayout,viewPager){tab,index ->
             tab.text = when(index){
-                0 -> {"Car Game"}
-                1 -> {"Number Game"}
-                2 -> {"Same Picture"}
+                0 -> "Car Game"
+                1 -> "Number Game"
+                2 -> "Same Picture"
                 else -> {throw Resources.NotFoundException("Position Not Found")
                 }
             }
